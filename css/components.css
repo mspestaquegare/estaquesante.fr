@@ -460,6 +460,11 @@
     box-shadow: var(--shadow-lg);
     margin-bottom: 2rem;
     border-left: 5px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.protocole-card:hover {
+    box-shadow: 0 8px 20px rgba(150, 111, 30, 0.15);
 }
 
 .protocole-header {
@@ -469,6 +474,32 @@
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--bg-tertiary);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.protocole-header:hover {
+    background-color: var(--bg-secondary);
+    margin: -1rem -1.5rem 2rem -1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-md);
+}
+
+.protocole-header::after {
+    content: '';
+    position: absolute;
+    right: 1rem;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23966F1E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.protocole-card.collapsed .protocole-header::after {
+    transform: rotate(-90deg);
 }
 
 .protocole-icon {
@@ -487,6 +518,20 @@
     color: var(--primary-color);
     margin: 0;
     font-size: 1.75rem;
+}
+
+/* Accordéon content */
+.protocole-content {
+    max-height: 10000px;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.protocole-card.collapsed .protocole-content {
+    max-height: 0;
+    opacity: 0;
+    margin-bottom: 0;
 }
 
 .protocole-card h3 {
@@ -518,6 +563,186 @@
     border-radius: var(--radius-md);
     margin: 1.5rem 0;
     border-left: 4px solid var(--primary-color);
+}
+
+/* Protocole metadata */
+.protocole-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+/* Menu de navigation des protocoles */
+.protocoles-menu {
+    margin: 3rem 0;
+}
+
+.protocoles-menu h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.menu-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border-left: 4px solid var(--primary-color);
+    display: block;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.menu-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.menu-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.menu-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Protocole sections */
+.section-block {
+    margin: 2rem 0;
+}
+
+.section-block h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.section-block h4 {
+    color: var(--text-primary);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Badges professionnels */
+.professionnel-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Key points */
+.key-points {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--primary-color);
+}
+
+.key-points ul {
+    margin-top: 0.5rem;
+}
+
+/* Étapes grid */
+.etapes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.etape-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary-color);
+}
+
+.etape-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.etape-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.info-box {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Contact référent */
+.contact-referent {
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    margin-top: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.contact-referent h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.contact-referent p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin: 0;
 }
 
 /* ================================
