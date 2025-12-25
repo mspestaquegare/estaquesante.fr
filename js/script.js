@@ -23,9 +23,14 @@ if (hamburger) {
     });
 }
 
-// Close menu when clicking on a link
+// Close menu when clicking on a link (but NOT on dropdown toggles)
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+        // Skip if this is a dropdown toggle
+        if (link.classList.contains('dropdown-toggle')) {
+            return;
+        }
+
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
 
