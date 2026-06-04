@@ -1137,3 +1137,95 @@ p {
         scroll-behavior: auto !important;
     }
 }
+
+/* ================================
+   Médecine du Sommeil Section
+   ================================ */
+
+.sommeil-section {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d2460 50%, #1a1a2e 100%);
+    padding: var(--spacing-xxl) 0;
+    color: #ffffff;
+}
+
+.sommeil-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sommeil-icon {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+}
+
+.sommeil-content {
+    flex: 1;
+}
+
+.sommeil-label {
+    display: inline-block;
+    background: rgba(245, 211, 109, 0.2);
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(245, 211, 109, 0.4);
+    margin-bottom: var(--spacing-sm);
+}
+
+.sommeil-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: var(--spacing-sm);
+}
+
+.sommeil-content p {
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05rem;
+}
+
+.sommeil-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-color);
+    color: var(--text-primary) !important;
+    font-weight: 600;
+    padding: 0.85rem 1.8rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.sommeil-btn:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .sommeil-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sommeil-content h2 {
+        font-size: 1.5rem;
+    }
+}
